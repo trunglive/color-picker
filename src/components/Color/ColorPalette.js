@@ -1,6 +1,7 @@
 import React from "react";
 import ColorCircle from "./ColorCircle";
 import ColorAndInput from "./ColorAndInput";
+import { ColorPaletteSelect, ColorPaletteWrapper } from "./ColorPalette.style";
 
 const colorOptions = [
   [
@@ -28,23 +29,23 @@ const colorOptions = [
 
 function ColorPalette(props) {
   return (
-    <div className="border border-gray-100 shadow-sm rounded">
-      <div className="border-b border-gray-100 p-4 space-y-3 flex flex-col items-center">
-        <div className="text-gray-500 text-sm">Change tag color</div>
-        <div className="space-y-3">
+    <ColorPaletteWrapper>
+      <ColorPaletteSelect>
+        <div className="color-palette-header">Change tag color</div>
+        <div className="color-palette-all-rows">
           {colorOptions.map((colorGroup, index) => (
-            <div className="flex space-x-3" key={index}>
+            <div className="color-palette-single-row" key={index}>
               {colorGroup.map((color) => (
                 <ColorCircle backgroundColor={color.value} key={color.value} />
               ))}
             </div>
           ))}
         </div>
-      </div>
-      <div className="p-4">
+      </ColorPaletteSelect>
+      <div style={{ padding: 16 }}>
         <ColorAndInput />
       </div>
-    </div>
+    </ColorPaletteWrapper>
   );
 }
 

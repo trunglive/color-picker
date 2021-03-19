@@ -1,4 +1,5 @@
 import React from "react";
+
 import ColorCircle from "./ColorCircle";
 import ColorPalette from "./ColorPalette";
 

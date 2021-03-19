@@ -1,4 +1,4 @@
-import TagColor from "./TagColor";
+import TagColor from "./components/Color/TagColor";
 import "./App.css";
 
 function App() {
