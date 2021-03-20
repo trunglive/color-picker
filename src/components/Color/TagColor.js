@@ -8,8 +8,8 @@ function TagColor(props) {
   return (
     <div style={{ marginTop: 150, marginLeft: 300 }}>
       <ViewWithPopup
-        noView={true}
-        view={<ColorCircle backgroundColor="#4a47a3" />}
+        noView
+        view={<ColorCircle backgroundColor="#387c6d" />}
         popup={<ColorPalette />}
       />
     </div>
