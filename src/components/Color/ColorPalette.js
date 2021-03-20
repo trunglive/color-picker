@@ -42,7 +42,7 @@ function ColorPalette(props) {
           ))}
         </div>
       </ColorPaletteSelect>
-      <div style={{ padding: 16 }}>
+      <div style={{ padding: 22 }}>
         <ColorAndInput />
       </div>
     </ColorPaletteWrapper>

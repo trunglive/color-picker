@@ -6,6 +6,7 @@ import { useOnClickOutside } from "./useOnClickOutside";
 export default function ViewWithPopup({
   view,
   popup,
+  popupPosition,
   noView = false,
   style,
   className,
@@ -34,6 +35,7 @@ export default function ViewWithPopup({
       <Container
         className="popup_container"
         showPopup={showPopup}
+        popupPosition={popupPosition}
         onClick={() => setShowPopup(true)}
         style={style}
       >

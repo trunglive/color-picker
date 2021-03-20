@@ -11,6 +11,8 @@ export const ColorPaletteWrapper = styled.div`
   box-shadow: 0 5px 16px 0 rgb(0 0 0 / 6%);
 
   .color-palette-all-rows {
+    padding: 8px;
+
     > div:not(:last-child) {
       margin-bottom: 12px;
     }
