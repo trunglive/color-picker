@@ -1,6 +1,5 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
-// className="flex items-center space-x-6"
 export const ColorAndInputWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -10,8 +9,6 @@ export const ColorAndInputWrapper = styled.div`
   }
 `;
 
-// className="text-gray-500 pr-2"
-// className="py-2 border-b border-dashed border-gray-600 outline-none"
 export const HexInputWrapper = styled.div`
   color: #646464;
 
