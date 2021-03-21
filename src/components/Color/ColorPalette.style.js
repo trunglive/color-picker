@@ -36,7 +36,7 @@ export const ColorPaletteSelect = styled.div`
 
   .color-palette-header {
     padding: 12px;
-    color: #646464;
+    color: #706f6f;
   }
 
   > div:not(:last-child) {

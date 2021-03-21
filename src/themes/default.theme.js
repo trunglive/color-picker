@@ -49,7 +49,7 @@ const defaultTheme = {
     "rgba(0, 0, 0, 0.16)", // 1: Carousel Button shadow
   ],
   fonts: {
-    primary: "Lato, sans-serif",
+    primary: "Roboto, sans-serif",
   },
 };
 
