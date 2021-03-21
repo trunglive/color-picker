@@ -7,6 +7,7 @@ export default function ViewWithPopup({
   view,
   popup,
   popupPosition,
+  showPopupOnHover,
   noView = false,
   style,
   className,
@@ -28,7 +29,11 @@ export default function ViewWithPopup({
       ref={ref}
     >
       {view && noView && (
-        <div className="popup_handler" onClick={() => setShowPopup(!showPopup)}>
+        <div
+          className="popup_handler"
+          onClick={() => setShowPopup(!showPopup)}
+          onMouseEnter={() => showPopupOnHover && setShowPopup(true)}
+        >
           {view}
         </div>
       )}

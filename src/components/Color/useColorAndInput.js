@@ -2,6 +2,7 @@ import { useState } from "react";
 
 function useColorAndInput() {
   const [currentColorHex, setColorHex] = useState("#be79df");
+  const [currentColorHover, setColorHover] = useState(null);
 
   const handleOnChange = (event) => {
     setColorHex(event.target.value);
@@ -11,11 +12,18 @@ function useColorAndInput() {
     setColorHex(value);
   };
 
+  const handleColorHover = (value) => {
+    setColorHover(value);
+  };
+
   return {
     currentColorHex,
     setColorHex,
     handleOnChange,
     onColorClick: handleColorClick,
+    currentColorHover,
+    setColorHover,
+    onColorHover: handleColorHover,
   };
 }
 

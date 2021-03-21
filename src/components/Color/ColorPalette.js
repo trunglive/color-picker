@@ -1,6 +1,7 @@
 import React from "react";
 
 import ColorCircle from "./ColorCircle";
+import ViewWithPopup from "../ViewWithPopup/ViewWithPopup";
 import { ColorPaletteSelect, ColorPaletteWrapper } from "./ColorPalette.style";
 
 const colorOptions = {
@@ -28,7 +29,12 @@ const colorOptions = {
 };
 
 function ColorPalette(props) {
-  const { currentColorHex, onColorClick } = props;
+  const {
+    currentColorHex,
+    onColorClick,
+    currentColorHover,
+    onColorHover,
+  } = props;
 
   return (
     <ColorPaletteWrapper>
@@ -38,15 +44,40 @@ function ColorPalette(props) {
           {Object.keys(colorOptions).map((row) => (
             <div className="color-palette-single-row" key={row}>
               {colorOptions[row].map((color) => (
-                <div
+                <ViewWithPopup
                   key={color.value}
-                  onClick={() => onColorClick(color.value)}
-                >
-                  <ColorCircle
-                    backgroundColor={color.value}
-                    currentSelectedColor={currentColorHex}
-                  />
-                </div>
+                  noView={true}
+                  view={
+                    <div
+                      onClick={() => onColorClick(color.value)}
+                      onMouseEnter={() => onColorHover(color.value)}
+                      onMouseLeave={() => onColorHover(null)}
+                    >
+                      <ColorCircle
+                        backgroundColor={color.value}
+                        currentSelectedColor={currentColorHex}
+                      />
+                    </div>
+                  }
+                  showPopupOnHover
+                  popup={
+                    (currentColorHex === color.value ||
+                      currentColorHover === color.value) && (
+                      <div
+                        style={{
+                          fontSize: 12,
+                          color: "#fff",
+                          backgroundColor: "#222831",
+                          padding: "4px 8px",
+                          boxShadow: "0 15px 26px 0 rgb(0 0 0 / 16%)",
+                        }}
+                      >
+                        {color.value}
+                      </div>
+                    )
+                  }
+                  popupPosition="left"
+                />
               ))}
             </div>
           ))}

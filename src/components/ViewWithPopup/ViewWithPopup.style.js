@@ -12,7 +12,7 @@ export const Container = styled.div`
     css`
       position: absolute;
       z-index: 999;
-      margin-top: 16px;
+      margin-top: 10px;
       transition: all 0.1s ease-out;
     `}
   transform: translateX(calc(${(props) =>

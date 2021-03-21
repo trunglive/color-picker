@@ -13,6 +13,7 @@ export const ColorCircleWrapper = styled.div`
         }`};
       border-radius: 50%;
       cursor: pointer;
+      transition: all 0.2s ease-out;
     `}
 `;
 

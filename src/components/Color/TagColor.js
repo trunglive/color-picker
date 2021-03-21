@@ -7,7 +7,13 @@ import ColorAndInput from "./ColorAndInput";
 import useColorAndInput from "./useColorAndInput";
 
 function TagColor(props) {
-  const { currentColorHex, handleOnChange, onColorClick } = useColorAndInput();
+  const {
+    currentColorHex,
+    handleOnChange,
+    onColorClick,
+    currentColorHover,
+    onColorHover,
+  } = useColorAndInput();
 
   return (
     <div style={{ marginTop: 150, marginLeft: 300 }}>
@@ -19,6 +25,8 @@ function TagColor(props) {
           <ColorPalette
             currentColorHex={currentColorHex}
             onColorClick={onColorClick}
+            currentColorHover={currentColorHover}
+            onColorHover={onColorHover}
           >
             <ColorAndInput
               currentColorHex={currentColorHex}
