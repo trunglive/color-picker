@@ -9,11 +9,11 @@ const colorOptions = {
     { label: "", value: "#387c6d" },
     { label: "", value: "#693c72" },
     { label: "", value: "#4a47a3" },
-    { label: "", value: "#314e52" },
+    { label: "", value: "#78c4d4" },
   ],
   row2: [
     { label: "", value: "#eb596e" },
-    { label: "", value: "#e4e3e3" },
+    { label: "", value: "#f0e5d8" },
     { label: "", value: "#d8ac9c" },
     { label: "", value: "#ffc93c" },
     { label: "", value: "#389393" },
@@ -23,12 +23,12 @@ const colorOptions = {
     { label: "", value: "#900d0d" },
     { label: "", value: "#222831" },
     { label: "", value: "#1a508b" },
-    { label: "", value: "#de7119" },
+    { label: "", value: "#9e7540" },
   ],
 };
 
 function ColorPalette(props) {
-  const { currentColorHex } = props;
+  const { currentColorHex, onColorClick } = props;
 
   return (
     <ColorPaletteWrapper>
@@ -38,11 +38,15 @@ function ColorPalette(props) {
           {Object.keys(colorOptions).map((row) => (
             <div className="color-palette-single-row" key={row}>
               {colorOptions[row].map((color) => (
-                <ColorCircle
+                <div
                   key={color.value}
-                  backgroundColor={color.value}
-                  currentSelectedColor={currentColorHex}
-                />
+                  onClick={() => onColorClick(color.value)}
+                >
+                  <ColorCircle
+                    backgroundColor={color.value}
+                    currentSelectedColor={currentColorHex}
+                  />
+                </div>
               ))}
             </div>
           ))}

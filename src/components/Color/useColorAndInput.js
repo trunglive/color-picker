@@ -7,7 +7,16 @@ function useColorAndInput() {
     setColorHex(event.target.value);
   };
 
-  return { currentColorHex, setColorHex, handleOnChange };
+  const handleColorClick = (value) => {
+    setColorHex(value);
+  };
+
+  return {
+    currentColorHex,
+    setColorHex,
+    handleOnChange,
+    onColorClick: handleColorClick,
+  };
 }
 
 export default useColorAndInput;

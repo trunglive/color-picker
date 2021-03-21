@@ -2,8 +2,8 @@ import styled, { css } from "styled-components";
 
 const popupPositionMapping = {
   left: "",
-  center: "-50% + 20px",
-  right: "-100% + 40px",
+  center: "-50% + 16px",
+  right: "-100% + 32px",
 };
 
 export const Container = styled.div`
