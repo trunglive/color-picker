@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import Portal from "../Portal/Portal";
+
 import { Wrapper, Container } from "./ViewWithPopup.style";
 import { useOnClickOutside } from "./useOnClickOutside";
 
@@ -40,11 +40,7 @@ export default function ViewWithPopup({
         style={style}
       >
         {view && !noView && view}
-        {showPopup && (
-          <div id="popup">
-            <Portal rendererId="popup">{popup && popup}</Portal>
-          </div>
-        )}
+        {showPopup && <div id="popup">{popup && popup}</div>}
       </Container>
     </Wrapper>
   );

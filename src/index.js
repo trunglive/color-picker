@@ -4,7 +4,6 @@ import { ThemeProvider } from "styled-components";
 
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-
 import theme from "./themes/default.theme";
 import "./index.css";
 

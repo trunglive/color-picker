@@ -18,6 +18,7 @@ export const HexInputWrapper = styled.div`
 
   > input {
     padding: 8px 0;
+    color: #929292;
     border: 0;
     border-bottom: 1px dashed #aaaab5;
     outline: none;
