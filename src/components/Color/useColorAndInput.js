@@ -1,13 +1,13 @@
 import { useState } from "react";
 
 function useColorAndInput() {
-  const [colorHex, setColorHex] = useState("be79df");
+  const [currentColorHex, setColorHex] = useState("#be79df");
 
   const handleOnChange = (event) => {
-    setColorHex(event.target.value.replace("#", ""));
+    setColorHex(event.target.value);
   };
 
-  return { colorHex, setColorHex, handleOnChange };
+  return { currentColorHex, setColorHex, handleOnChange };
 }
 
 export default useColorAndInput;

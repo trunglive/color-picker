@@ -22,7 +22,7 @@ export const ColorPaletteWrapper = styled.div`
     display: flex;
 
     > div:not(:last-child) {
-      margin-right: 12px;
+      margin-right: 8px;
     }
   }
 `;
@@ -40,6 +40,6 @@ export const ColorPaletteSelect = styled.div`
   }
 
   > div:not(:last-child) {
-    margin-bottom: 12px;
+    margin-bottom: 8px;
   }
 `;

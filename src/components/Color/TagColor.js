@@ -7,19 +7,18 @@ import ColorAndInput from "./ColorAndInput";
 import useColorAndInput from "./useColorAndInput";
 
 function TagColor(props) {
-  const { colorHex, handleOnChange } = useColorAndInput();
+  const { currentColorHex, handleOnChange } = useColorAndInput();
 
   return (
     <div style={{ marginTop: 150, marginLeft: 300 }}>
       <ViewWithPopup
         key={400}
         noView={true}
-        view={<ColorCircle backgroundColor={`#${colorHex}`} />}
+        view={<ColorCircle backgroundColor={currentColorHex} hideBorder />}
         popup={
-          <ColorPalette>
+          <ColorPalette currentColorHex={currentColorHex}>
             <ColorAndInput
-              key="dope"
-              colorHex={colorHex}
+              currentColorHex={currentColorHex}
               handleOnChange={handleOnChange}
             />
           </ColorPalette>

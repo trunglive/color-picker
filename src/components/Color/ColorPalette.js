@@ -28,6 +28,8 @@ const colorOptions = {
 };
 
 function ColorPalette(props) {
+  const { currentColorHex } = props;
+
   return (
     <ColorPaletteWrapper>
       <ColorPaletteSelect>
@@ -36,13 +38,17 @@ function ColorPalette(props) {
           {Object.keys(colorOptions).map((row) => (
             <div className="color-palette-single-row" key={row}>
               {colorOptions[row].map((color) => (
-                <ColorCircle backgroundColor={color.value} key={color.value} />
+                <ColorCircle
+                  key={color.value}
+                  backgroundColor={color.value}
+                  currentSelectedColor={currentColorHex}
+                />
               ))}
             </div>
           ))}
         </div>
       </ColorPaletteSelect>
-      <div style={{ padding: 22 }}>{props.children}</div>
+      <div style={{ padding: "18px 14px" }}>{props.children}</div>
     </ColorPaletteWrapper>
   );
 }

@@ -4,20 +4,17 @@ import ColorCircle from "./ColorCircle";
 import { ColorAndInputWrapper, HexInputWrapper } from "./ColorAndInput.style";
 
 function ColorAndInput(props) {
-  const { colorHex, handleOnChange } = props;
+  const { currentColorHex, handleOnChange } = props;
 
   return (
     <ColorAndInputWrapper>
-      <ColorCircle
-        backgroundColor={`#${colorHex || "387c6d"}`}
-        key={colorHex}
-      />
+      <ColorCircle backgroundColor={currentColorHex || "387c6d"} hideBorder />
       <HexInputWrapper>
-        <span>#</span>
+        {/*<span>#</span>*/}
         <input
           type="text"
           autoComplete="off"
-          value={colorHex}
+          value={currentColorHex}
           onChange={handleOnChange}
           placeholder=""
           disabled={false}

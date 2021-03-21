@@ -7,11 +7,11 @@
 // state to Modal and only render the children when Modal
 // is inserted in the DOM tree.
 
-import { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
+import { useState, useEffect } from "react";
+import ReactDOM from "react-dom";
 
 export default function Portal({ children, rendererId }) {
-  const [containerEl] = useState(document.createElement('div'));
+  const [containerEl] = useState(document.createElement("div"));
   useEffect(() => {
     let portalRoot = document.getElementById(rendererId) || document.body;
     portalRoot.appendChild(containerEl);

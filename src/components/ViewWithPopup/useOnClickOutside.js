@@ -1,8 +1,9 @@
 // Hook
-import { useEffect } from 'react';
+import { useEffect } from "react";
+
 export function useOnClickOutside(ref, handler) {
   useEffect(() => {
-    const listener = event => {
+    const listener = (event) => {
       // Do nothing if clicking ref's element or descendent elements
       if (!ref.current || ref.current.contains(event.target)) {
         return;
@@ -11,12 +12,12 @@ export function useOnClickOutside(ref, handler) {
       handler(event);
     };
 
-    document.addEventListener('mousedown', listener);
-    document.addEventListener('touchstart', listener);
+    document.addEventListener("mousedown", listener);
+    document.addEventListener("touchstart", listener);
 
     return () => {
-      document.removeEventListener('mousedown', listener);
-      document.removeEventListener('touchstart', listener);
+      document.removeEventListener("mousedown", listener);
+      document.removeEventListener("touchstart", listener);
     };
   }, [ref, handler]); // Empty array ensures that effect is only run on mount and unmount
 }
