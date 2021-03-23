@@ -22,5 +22,10 @@ export const HexInputWrapper = styled.div`
     border: 0;
     border-bottom: 1px dashed #aaaab5;
     outline: none;
+
+    ::placeholder {
+      color: #929292;
+      opacity: 40%;
+    }
   }
 `;

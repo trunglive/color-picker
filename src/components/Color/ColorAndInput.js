@@ -15,7 +15,7 @@ function ColorAndInput(props) {
           autoComplete="off"
           value={color.selected}
           onChange={(event) => onChange({ selected: event.target.value })}
-          placeholder=""
+          placeholder="input hex color"
           disabled={false}
         />
       </HexInputWrapper>
