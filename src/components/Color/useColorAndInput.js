@@ -1,29 +1,18 @@
 import { useState } from "react";
 
 function useColorAndInput() {
-  const [currentColorHex, setColorHex] = useState("#be79df");
-  const [currentColorHover, setColorHover] = useState(null);
+  const [color, setColor] = useState({
+    selected: "#be79df",
+    hovered: null,
+  });
 
-  const handleOnChange = (event) => {
-    setColorHex(event.target.value);
-  };
-
-  const handleColorClick = (value) => {
-    setColorHex(value);
-  };
-
-  const handleColorHover = (value) => {
-    setColorHover(value);
+  const handleOnColorChange = (data) => {
+    setColor({ ...color, ...data });
   };
 
   return {
-    currentColorHex,
-    setColorHex,
-    handleOnChange,
-    onColorClick: handleColorClick,
-    currentColorHover,
-    setColorHover,
-    onColorHover: handleColorHover,
+    color,
+    onChange: handleOnColorChange,
   };
 }
 

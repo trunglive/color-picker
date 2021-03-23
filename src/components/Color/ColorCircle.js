@@ -3,12 +3,12 @@ import React from "react";
 import { ColorCircleWrapper, ColorCircleInner } from "./ColorCircle.style";
 
 function ColorCircle(props) {
-  const { backgroundColor, currentSelectedColor, hideBorder } = props;
+  const { color, backgroundColor, hideBorder } = props;
 
   return (
     <ColorCircleWrapper
+      currentSelectedColor={color.selected}
       backgroundColor={backgroundColor}
-      currentSelectedColor={currentSelectedColor}
       hideBorder={hideBorder}
     >
       <ColorCircleInner backgroundColor={backgroundColor} />

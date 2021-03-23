@@ -1,10 +1,5 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
-  position: relative;
-  width: 100%;
-`;
-
 export const ColorPaletteWrapper = styled.div`
   border: 1px solid #f2f2f2;
   border-radius: 2px;
@@ -25,6 +20,14 @@ export const ColorPaletteWrapper = styled.div`
       margin-right: 8px;
     }
   }
+`;
+
+export const ColorPaletteTooltip = styled.div`
+  padding: 4px 8px;
+  font-size: 12px;
+  color: #fff;
+  background-color: #222831;
+  box-shadow: 0 15px 26px 0 rgb(0 0 0 / 16%);
 `;
 
 export const ColorPaletteSelect = styled.div`
