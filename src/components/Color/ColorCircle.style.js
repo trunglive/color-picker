@@ -18,9 +18,9 @@ export const ColorCircleWrapper = styled.div`
 `;
 
 export const ColorCircleInner = styled.div`
-  background-color: ${(props) => props.backgroundColor};
   width: 32px;
   height: 32px;
+  background-color: ${(props) => props.backgroundColor};
   border-radius: 50%;
   cursor: pointer;
 `;

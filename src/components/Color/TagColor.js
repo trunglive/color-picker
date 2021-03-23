@@ -6,32 +6,24 @@ import ColorPalette from "./ColorPalette";
 import ColorAndInput from "./ColorAndInput";
 import useColorAndInput from "./useColorAndInput";
 
-function TagColor(props) {
-  const {
-    currentColorHex,
-    handleOnChange,
-    onColorClick,
-    currentColorHover,
-    onColorHover,
-  } = useColorAndInput();
+function TagColor() {
+  const { color, onChange } = useColorAndInput();
 
   return (
     <div style={{ marginTop: 150, marginLeft: 300 }}>
       <ViewWithPopup
         key={400}
         noView={true}
-        view={<ColorCircle backgroundColor={currentColorHex} hideBorder />}
+        view={
+          <ColorCircle
+            color={color}
+            backgroundColor={color.selected}
+            hideBorder
+          />
+        }
         popup={
-          <ColorPalette
-            currentColorHex={currentColorHex}
-            onColorClick={onColorClick}
-            currentColorHover={currentColorHover}
-            onColorHover={onColorHover}
-          >
-            <ColorAndInput
-              currentColorHex={currentColorHex}
-              handleOnChange={handleOnChange}
-            />
+          <ColorPalette color={color} onChange={onChange}>
+            <ColorAndInput color={color} onChange={onChange} />
           </ColorPalette>
         }
       />
