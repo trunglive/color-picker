@@ -5,6 +5,7 @@ import ColorCircle from "./ColorCircle";
 import ColorPalette from "./ColorPalette";
 import ColorAndInput from "./ColorAndInput";
 import useColorAndInput from "./useColorAndInput";
+import { isColor } from "../../utils/color";
 
 function TagColor() {
   const { color, onChange } = useColorAndInput();
@@ -24,7 +25,10 @@ function TagColor() {
         view={
           <ColorCircle
             color={color}
-            backgroundColor={color.selected}
+            backgroundColor={
+              isColor(color.selected) ? color.selected : "#e4e3e3"
+            }
+            showQuestionMark={!isColor(color.selected)}
             hideBorder
           />
         }

@@ -3,7 +3,7 @@ import React from "react";
 import { ColorCircleWrapper, ColorCircleInner } from "./ColorCircle.style";
 
 function ColorCircle(props) {
-  const { color, backgroundColor, hideBorder } = props;
+  const { color, backgroundColor, showQuestionMark, hideBorder } = props;
 
   return (
     <ColorCircleWrapper
@@ -11,7 +11,12 @@ function ColorCircle(props) {
       backgroundColor={backgroundColor}
       hideBorder={hideBorder}
     >
-      <ColorCircleInner backgroundColor={backgroundColor} />
+      <ColorCircleInner
+        backgroundColor={backgroundColor}
+        showQuestionMark={showQuestionMark}
+      >
+        {showQuestionMark && "?"}
+      </ColorCircleInner>
     </ColorCircleWrapper>
   );
 }

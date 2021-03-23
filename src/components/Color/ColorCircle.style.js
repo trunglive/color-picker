@@ -23,4 +23,13 @@ export const ColorCircleInner = styled.div`
   background-color: ${(props) => props.backgroundColor};
   border-radius: 50%;
   cursor: pointer;
+
+  ${(props) =>
+    props.showQuestionMark &&
+    css`
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    `}
 `;
