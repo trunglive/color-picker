@@ -4,8 +4,9 @@ import ViewWithPopup from "../ViewWithPopup/ViewWithPopup";
 import ColorCircle from "./ColorCircle";
 import {
   ColorPaletteWrapper,
-  ColorPaletteSelect,
+  ColorPaletteCircleGroup,
   ColorPaletteTooltip,
+  ColorPaletteInput,
 } from "./ColorPalette.style";
 
 import { colorOptions } from "../../data/main";
@@ -15,7 +16,7 @@ function ColorPalette(props) {
 
   return (
     <ColorPaletteWrapper>
-      <ColorPaletteSelect>
+      <ColorPaletteCircleGroup>
         <div className="color-palette-header">Select color</div>
         <div className="color-palette-all-rows">
           {Object.keys(colorOptions).map((row) => (
@@ -49,8 +50,8 @@ function ColorPalette(props) {
             </div>
           ))}
         </div>
-      </ColorPaletteSelect>
-      <div style={{ padding: "18px 14px" }}>{props.children}</div>
+      </ColorPaletteCircleGroup>
+      <ColorPaletteInput>{props.children}</ColorPaletteInput>
     </ColorPaletteWrapper>
   );
 }
