@@ -9,6 +9,7 @@ export default function ViewWithPopup({
   popupPosition,
   showPopupOnHover,
   noView = false,
+  popupBackground,
   style,
   className,
 }) {
@@ -53,11 +54,17 @@ export default function ViewWithPopup({
         showPopup={showPopup}
         popupPosition={popupPosition}
         popupHandlerWidth={popupHandlerWidth}
+        popupBackground={popupBackground}
         onClick={() => setShowPopup(true)}
         style={style}
       >
         {view && !noView}
-        {showPopup && <div id="popup">{popup && popup}</div>}
+        {showPopup && (
+          <div id="popup">
+            {popup && popup}
+            {popup && <div className="tooltip_arrow" />}
+          </div>
+        )}
       </Container>
     </Wrapper>
   );

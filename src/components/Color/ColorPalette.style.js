@@ -23,10 +23,11 @@ export const ColorPaletteWrapper = styled.div`
 `;
 
 export const ColorPaletteTooltip = styled.div`
-  padding: 4px 8px;
-  font-size: 12px;
+  padding: 7px 10px;
+  font-size: 11px;
   color: #fff;
   background-color: #222831;
+  border-radius: 1px;
   box-shadow: 0 15px 26px 0 rgb(0 0 0 / 16%);
 `;
 

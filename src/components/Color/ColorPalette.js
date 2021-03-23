@@ -43,6 +43,7 @@ function ColorPalette(props) {
                       <ColorPaletteTooltip>{option.value}</ColorPaletteTooltip>
                     )
                   }
+                  popupBackground="dark"
                 />
               ))}
             </div>
