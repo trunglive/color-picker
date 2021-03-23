@@ -43,7 +43,6 @@ function ColorPalette(props) {
                       <ColorPaletteTooltip>{option.value}</ColorPaletteTooltip>
                     )
                   }
-                  popupPosition="left"
                 />
               ))}
             </div>

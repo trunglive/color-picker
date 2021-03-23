@@ -10,7 +10,14 @@ function TagColor() {
   const { color, onChange } = useColorAndInput();
 
   return (
-    <div style={{ marginTop: 150, marginLeft: 300 }}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "50vh",
+      }}
+    >
       <ViewWithPopup
         key={400}
         noView={true}

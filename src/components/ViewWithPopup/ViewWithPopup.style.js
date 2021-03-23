@@ -1,9 +1,12 @@
 import styled, { css } from "styled-components";
 
-const popupPositionMapping = {
-  left: "",
-  center: "-50% + 16px",
-  right: "-100% + 32px",
+const popupPositionMapping = ({ position, handlerWidth }) => {
+  const positionObj = {
+    left: "",
+    center: `-50% + ${handlerWidth / 2}px`,
+    right: `-100% + ${handlerWidth}px`,
+  };
+  return positionObj[position];
 };
 
 export const Container = styled.div`
@@ -16,12 +19,14 @@ export const Container = styled.div`
       transition: all 0.1s ease-out;
     `}
   transform: translateX(calc(${(props) =>
-    popupPositionMapping[props.popupPosition || "center"]}));
+    popupPositionMapping({
+      position: props.popupPosition || "center",
+      handlerWidth: props.popupHandlerWidth,
+    })}));
 `;
 
 export const Wrapper = styled.div`
-  //position: relative;
-
   .popup_handler {
+    //customize css later
   }
 `;

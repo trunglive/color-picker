@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 import { Wrapper, Container } from "./ViewWithPopup.style";
 import { useOnClickOutside } from "./useOnClickOutside";
@@ -13,11 +13,21 @@ export default function ViewWithPopup({
   className,
 }) {
   const [showPopup, setShowPopup] = useState(false);
-  const ref = useRef();
-  useOnClickOutside(ref, () => setShowPopup(false));
+  const wrapperRef = useRef();
+  useOnClickOutside(wrapperRef, () => setShowPopup(false));
+
+  const [popupHandlerWidth, setPopupHandlerWidth] = useState(0);
+  const popupHandlerRef = useRef(null);
+
+  useEffect(() => {
+    const width = popupHandlerRef.current
+      ? popupHandlerRef.current.offsetWidth
+      : 0;
+    setPopupHandlerWidth(width);
+  }, []);
+
   // Add all classes to an array
   const addAllClasses = ["view_with__popup"];
-
   // className prop checking
   if (className) {
     addAllClasses.push(className);
@@ -26,10 +36,11 @@ export default function ViewWithPopup({
   return (
     <Wrapper
       className={`${addAllClasses.join(" ")} ${showPopup ? "active" : ""}`}
-      ref={ref}
+      ref={wrapperRef}
     >
       {view && noView && (
         <div
+          ref={popupHandlerRef}
           className="popup_handler"
           onClick={() => setShowPopup(!showPopup)}
           onMouseEnter={() => showPopupOnHover && setShowPopup(true)}
@@ -41,10 +52,11 @@ export default function ViewWithPopup({
         className="popup_container"
         showPopup={showPopup}
         popupPosition={popupPosition}
+        popupHandlerWidth={popupHandlerWidth}
         onClick={() => setShowPopup(true)}
         style={style}
       >
-        {view && !noView && view}
+        {view && !noView}
         {showPopup && <div id="popup">{popup && popup}</div>}
       </Container>
     </Wrapper>
