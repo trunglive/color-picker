@@ -1,13 +1,13 @@
 import React, { Fragment } from "react";
 
 import ColorCircle from "./ColorCircle";
+import Tooltip from "../../base/Tooltip/Tooltip";
 import {
   ColorPaletteCircleGroup,
   ColorPaletteInput,
 } from "./ColorPalette.style";
 
 import { colorOptions } from "../../data/main";
-import Tooltip from "../../base/Tooltip/Tooltip";
 
 function ColorPalette(props) {
   const { color, onChange } = props;

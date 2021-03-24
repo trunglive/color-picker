@@ -60,9 +60,13 @@ export default function ViewWithPopup({
       >
         {view && !noView}
         {showPopup && popup && (
-          <div className="popup">
+          <div className={enableTooltip ? "tooltip" : "popup"}>
             {popup}
-            {popup && <div className="popup_arrow" />}
+            {popup && (
+              <div
+                className={enableTooltip ? "tooltip_arrow" : "popup_arrow"}
+              />
+            )}
           </div>
         )}
       </Container>
