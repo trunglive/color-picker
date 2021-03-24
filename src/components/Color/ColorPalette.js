@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 
-import ViewWithPopup from "../../base/ViewWithPopup/ViewWithPopup";
+// import ViewWithPopup from "../../base/ViewWithPopup/ViewWithPopup";
+import Tooltip from "../../base/Tooltip/Tooltip";
 import ColorCircle from "./ColorCircle";
 import {
   ColorPaletteCircleGroup,
@@ -21,7 +22,7 @@ function ColorPalette(props) {
           {Object.keys(colorOptions).map((row) => (
             <div className="color-palette-single-row" key={row}>
               {colorOptions[row].map((option) => (
-                <ViewWithPopup
+                <Tooltip
                   key={option.value}
                   noView={true}
                   view={

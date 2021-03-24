@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const ColorPaletteTooltip = styled.div`
-  padding: 5px 8px;
+  padding: 5px 9px;
   font-size: 11px;
-  color: #2c2c2c;
-  background-color: #fff;
+  color: #fff;
+  //background-color: #fff;
 `;
 
 export const ColorPaletteCircleGroup = styled.div`
