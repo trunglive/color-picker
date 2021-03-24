@@ -57,9 +57,9 @@ export default function ViewWithPopup({
         style={style}
       >
         {view && !noView}
-        {showPopup && (
+        {showPopup && popup && (
           <div id="popup">
-            {popup && popup}
+            {popup}
             {popup && <div className="tooltip_arrow" />}
           </div>
         )}

@@ -1,12 +1,5 @@
 import styled from "styled-components";
 
-export const ColorPaletteTooltip = styled.div`
-  padding: 5px 9px;
-  font-size: 11px;
-  color: #fff;
-  //background-color: #fff;
-`;
-
 export const ColorPaletteCircleGroup = styled.div`
   display: flex;
   flex-direction: column;
