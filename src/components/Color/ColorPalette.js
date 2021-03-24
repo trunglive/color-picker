@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 
-import ColorCircle from "./ColorCircle";
 import Tooltip from "../../base/Tooltip/Tooltip";
+import ColorCircle from "./ColorCircle";
 import {
   ColorPaletteCircleGroup,
   ColorPaletteInput,
