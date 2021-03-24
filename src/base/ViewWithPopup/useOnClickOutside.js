@@ -3,7 +3,7 @@ import { useEffect } from "react";
 export function useOnClickOutside(ref, handler) {
   useEffect(() => {
     const listener = (event) => {
-      // Do nothing if clicking ref's element or descendent elements
+      // do nothing if clicking ref's element or descendent elements
       if (!ref.current || ref.current.contains(event.target)) {
         return;
       }
@@ -18,5 +18,5 @@ export function useOnClickOutside(ref, handler) {
       document.removeEventListener("mousedown", listener);
       document.removeEventListener("touchstart", listener);
     };
-  }, [ref, handler]); // Empty array ensures that effect is only run on mount and unmount
+  }, [ref, handler]); // empty array ensures that effect is only run on mount and unmount
 }

@@ -11,7 +11,7 @@ const popupPositionMapping = ({ position, handlerWidth }) => {
 
 export const Container = styled.div`
   ${(props) =>
-    props.showPopup &&
+    props?.showPopup &&
     css`
       position: absolute;
       z-index: 999;
@@ -24,24 +24,50 @@ export const Container = styled.div`
       handlerWidth: props.popupHandlerWidth,
     })}));
 
-  #popup {
+  .popup {
     position: relative;
-    border: 1px solid #f2f2f2;
-    border-radius: 2px;
-    box-shadow: 0 5px 16px 0 rgb(0 0 0 / 6%);
+
+    ${(props) =>
+      props.enableTooltip
+        ? css`
+            padding: 5px 9px;
+            font-size: 11px;
+            color: #fff;
+            background-color: #222831;
+          `
+        : css`
+            border: 1px solid #f2f2f2;
+            border-radius: 2px;
+            box-shadow: 0 5px 16px 0 rgb(0 0 0 / 6%);
+          `}
   }
 
-  .tooltip_arrow {
+  .popup_arrow {
     position: absolute;
-    top: -6px;
-    left: calc(50% - 6px);
     transform: rotate(-45deg);
-    height: 10px;
-    width: 10px;
-    background-color: #fff;
-    border-top: 1px solid #f2f2f2;
-    border-right: 1px solid #f2f2f2;
-    border-top-right-radius: 2px;
+
+    ${(props) =>
+      props.enableTooltip
+        ? css`
+            top: -3px;
+            left: calc(50% - 3px);
+            height: 6px;
+            width: 6px;
+            background-color: #222831;
+            border-top: 1px solid #222831;
+            border-right: 1px solid #222831;
+            border-radius: 2px;
+          `
+        : css`
+            top: -6px;
+            left: calc(50% - 6px);
+            height: 10px;
+            width: 10px;
+            background-color: #fff;
+            border-top: 1px solid #f2f2f2;
+            border-right: 1px solid #f2f2f2;
+            border-top-right-radius: 2px;
+          `}
   }
 `;
 

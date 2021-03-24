@@ -11,6 +11,7 @@ export default function ViewWithPopup({
   noView = false,
   style,
   className,
+  enableTooltip,
 }) {
   const [showPopup, setShowPopup] = useState(false);
   const wrapperRef = useRef();
@@ -21,12 +22,12 @@ export default function ViewWithPopup({
 
   useEffect(() => {
     const width = popupHandlerRef.current
-      ? popupHandlerRef.current.offsetWidth
+      ? popupHandlerRef.current?.offsetWidth
       : 0;
     setPopupHandlerWidth(width);
   }, []);
 
-  // Add all classes to an array
+  // add all classes to an array
   const addAllClasses = ["view_with__popup"];
   // className prop checking
   if (className) {
@@ -55,12 +56,13 @@ export default function ViewWithPopup({
         popupHandlerWidth={popupHandlerWidth}
         onClick={() => setShowPopup(true)}
         style={style}
+        enableTooltip={enableTooltip}
       >
         {view && !noView}
         {showPopup && popup && (
-          <div id="popup">
+          <div className="popup">
             {popup}
-            {popup && <div className="tooltip_arrow" />}
+            {popup && <div className="popup_arrow" />}
           </div>
         )}
       </Container>
