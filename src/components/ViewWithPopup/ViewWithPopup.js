@@ -9,7 +9,6 @@ export default function ViewWithPopup({
   popupPosition,
   showPopupOnHover,
   noView = false,
-  popupBackground,
   style,
   className,
 }) {
@@ -54,7 +53,6 @@ export default function ViewWithPopup({
         showPopup={showPopup}
         popupPosition={popupPosition}
         popupHandlerWidth={popupHandlerWidth}
-        popupBackground={popupBackground}
         onClick={() => setShowPopup(true)}
         style={style}
       >

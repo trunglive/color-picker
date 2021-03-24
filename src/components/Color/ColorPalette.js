@@ -1,9 +1,8 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 import ViewWithPopup from "../ViewWithPopup/ViewWithPopup";
 import ColorCircle from "./ColorCircle";
 import {
-  ColorPaletteWrapper,
   ColorPaletteCircleGroup,
   ColorPaletteTooltip,
   ColorPaletteInput,
@@ -15,7 +14,7 @@ function ColorPalette(props) {
   const { color, onChange } = props;
 
   return (
-    <ColorPaletteWrapper>
+    <Fragment>
       <ColorPaletteCircleGroup>
         <div className="color-palette-header">Select color</div>
         <div className="color-palette-all-rows">
@@ -44,7 +43,6 @@ function ColorPalette(props) {
                       <ColorPaletteTooltip>{option.value}</ColorPaletteTooltip>
                     )
                   }
-                  popupBackground="dark"
                 />
               ))}
             </div>
@@ -52,7 +50,7 @@ function ColorPalette(props) {
         </div>
       </ColorPaletteCircleGroup>
       <ColorPaletteInput>{props.children}</ColorPaletteInput>
-    </ColorPaletteWrapper>
+    </Fragment>
   );
 }
 

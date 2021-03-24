@@ -26,29 +26,22 @@ export const Container = styled.div`
 
   #popup {
     position: relative;
+    border: 1px solid #f2f2f2;
+    border-radius: 2px;
+    box-shadow: 0 5px 16px 0 rgb(0 0 0 / 6%);
   }
 
   .tooltip_arrow {
     position: absolute;
-    top: -5px;
+    top: -6px;
     left: calc(50% - 6px);
     transform: rotate(-45deg);
     height: 10px;
     width: 10px;
+    background-color: #fff;
+    border-top: 1px solid #f2f2f2;
+    border-right: 1px solid #f2f2f2;
     border-radius: 1px;
-
-    ${(props) =>
-      props.popupBackground === "dark"
-        ? css`
-            background-color: #222831;
-            border-top: 1px solid #222831;
-            border-right: 1px solid #222831;
-          `
-        : css`
-            background-color: #fff;
-            border-top: 1px solid #f2f2f2;
-            border-right: 1px solid #f2f2f2;
-          `}
   }
 `;
 
