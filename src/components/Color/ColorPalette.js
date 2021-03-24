@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-import ViewWithPopup from "../ViewWithPopup/ViewWithPopup";
+import ViewWithPopup from "../../base/ViewWithPopup/ViewWithPopup";
 import ColorCircle from "./ColorCircle";
 import {
   ColorPaletteCircleGroup,

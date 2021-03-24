@@ -1,6 +1,6 @@
 import React from "react";
 
-import ViewWithPopup from "../ViewWithPopup/ViewWithPopup";
+import ViewWithPopup from "../../base/ViewWithPopup/ViewWithPopup";
 import ColorCircle from "./ColorCircle";
 import ColorPalette from "./ColorPalette";
 import ColorAndInput from "./ColorAndInput";
