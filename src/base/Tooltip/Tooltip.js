@@ -5,25 +5,25 @@ import { useOnClickOutside } from "../ViewWithPopup/useOnClickOutside";
 
 export default function Tooltip({
   view,
-  popup,
-  popupPosition,
-  showPopupOnHover,
+  tooltip,
+  tooltipPosition,
+  showTooltipOnHover,
   noView = false,
   style,
   className,
 }) {
-  const [showPopup, setShowPopup] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(false);
   const wrapperRef = useRef();
-  useOnClickOutside(wrapperRef, () => setShowPopup(false));
+  useOnClickOutside(wrapperRef, () => setShowTooltip(false));
 
-  const [popupHandlerWidth, setPopupHandlerWidth] = useState(0);
-  const popupHandlerRef = useRef(null);
+  const [tooltipHandlerWidth, setTooltipHandlerWidth] = useState(0);
+  const tooltipHandlerRef = useRef(null);
 
   useEffect(() => {
-    const width = popupHandlerRef.current
-      ? popupHandlerRef.current.offsetWidth
+    const width = tooltipHandlerRef.current
+      ? tooltipHandlerRef.current.offsetWidth
       : 0;
-    setPopupHandlerWidth(width);
+    setTooltipHandlerWidth(width);
   }, []);
 
   // Add all classes to an array
@@ -35,32 +35,32 @@ export default function Tooltip({
 
   return (
     <Wrapper
-      className={`${addAllClasses.join(" ")} ${showPopup ? "active" : ""}`}
+      className={`${addAllClasses.join(" ")} ${showTooltip ? "active" : ""}`}
       ref={wrapperRef}
     >
       {view && noView && (
         <div
-          ref={popupHandlerRef}
+          ref={tooltipHandlerRef}
           className="popup_handler"
-          onClick={() => setShowPopup(!showPopup)}
-          onMouseEnter={() => showPopupOnHover && setShowPopup(true)}
+          onClick={() => setShowTooltip(!showTooltip)}
+          onMouseEnter={() => showTooltipOnHover && setShowTooltip(true)}
         >
           {view}
         </div>
       )}
       <Container
         className="popup_container"
-        showPopup={showPopup}
-        popupPosition={popupPosition}
-        popupHandlerWidth={popupHandlerWidth}
-        onClick={() => setShowPopup(true)}
+        showTooltip={showTooltip}
+        tooltipPosition={tooltipPosition}
+        tooltipHandlerWidth={tooltipHandlerWidth}
+        onClick={() => setShowTooltip(true)}
         style={style}
       >
         {view && !noView}
-        {showPopup && (
+        {showTooltip && tooltip && (
           <div className="tooltip">
-            {popup && popup}
-            {popup && <div className="tooltip_arrow" />}
+            {tooltip}
+            <div className="tooltip_arrow" />
           </div>
         )}
       </Container>

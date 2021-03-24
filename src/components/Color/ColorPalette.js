@@ -1,11 +1,9 @@
 import React, { Fragment } from "react";
 
-// import ViewWithPopup from "../../base/ViewWithPopup/ViewWithPopup";
 import Tooltip from "../../base/Tooltip/Tooltip";
 import ColorCircle from "./ColorCircle";
 import {
   ColorPaletteCircleGroup,
-  ColorPaletteTooltip,
   ColorPaletteInput,
 } from "./ColorPalette.style";
 
@@ -37,12 +35,11 @@ function ColorPalette(props) {
                       />
                     </div>
                   }
-                  showPopupOnHover
-                  popup={
+                  showTooltipOnHover
+                  tooltip={
                     (color.selected === option.value ||
-                      color.hovered === option.value) && (
-                      <ColorPaletteTooltip>{option.value}</ColorPaletteTooltip>
-                    )
+                      color.hovered === option.value) &&
+                    option.value
                   }
                 />
               ))}

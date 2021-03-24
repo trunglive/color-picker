@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-const popupPositionMapping = ({ position, handlerWidth }) => {
+const tooltipPositionMapping = ({ position, handlerWidth }) => {
   const positionObj = {
     left: "",
     center: `-50% + ${handlerWidth / 2}px`,
@@ -11,7 +11,7 @@ const popupPositionMapping = ({ position, handlerWidth }) => {
 
 export const Container = styled.div`
   ${(props) =>
-    props.showPopup &&
+    props.showTooltip &&
     css`
       position: absolute;
       z-index: 999;
@@ -19,13 +19,16 @@ export const Container = styled.div`
       transition: all 0.1s ease-out;
     `}
   transform: translateX(calc(${(props) =>
-    popupPositionMapping({
-      position: props.popupPosition || "center",
-      handlerWidth: props.popupHandlerWidth,
+    tooltipPositionMapping({
+      position: props.tooltipPosition || "center",
+      handlerWidth: props.tooltipHandlerWidth,
     })}));
 
   .tooltip {
     position: relative;
+    padding: 5px 9px;
+    font-size: 11px;
+    color: #fff;
     background-color: #222831;
     border-radius: 2px;
   }
@@ -45,7 +48,7 @@ export const Container = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  .popup_handler {
+  .tooltip_handler {
     //customize css later
   }
 `;
