@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import themeGet from "@styled-system/theme-get";
 
 export const ColorAndInputWrapper = styled.div`
   display: flex;
@@ -10,21 +11,21 @@ export const ColorAndInputWrapper = styled.div`
 `;
 
 export const HexInputWrapper = styled.div`
-  color: #646464;
-
   > span {
     padding-right: 8px;
   }
 
   > input {
     padding: 8px 0;
-    color: #929292;
-    border: 0;
-    border-bottom: 1px dashed #aaaab5;
+    color: ${themeGet("text.1")};
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: ${themeGet("border.dashed.0")};
     outline: none;
 
     ::placeholder {
-      color: #929292;
+      color: ${themeGet("text.1")};
       opacity: 40%;
     }
   }

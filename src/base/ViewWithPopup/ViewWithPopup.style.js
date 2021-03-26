@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import themeGet from "@styled-system/theme-get";
 
 const popupPositionMapping = ({ position, handlerWidth }) => {
   const positionObj = {
@@ -26,9 +27,9 @@ export const Container = styled.div`
 
   .popup {
     position: relative;
-    border: 1px solid #f2f2f2;
+    border: ${themeGet("border.solid.0")};
     border-radius: 2px;
-    box-shadow: 0 5px 16px 0 rgb(0 0 0 / 6%);
+    box-shadow: ${themeGet("boxShadow.0")};
   }
 
   .tooltip {
@@ -36,10 +37,10 @@ export const Container = styled.div`
     padding: 5px 9px;
     font-size: 11px;
     color: #fff;
-    background-color: #222831;
+    background-color: ${themeGet("bgColor.0")};
     border: none;
     border-radius: 2px;
-    box-shadow: 0 5px 16px 0 rgb(0 0 0 / 6%);
+    box-shadow: ${themeGet("boxShadow.0")};
   }
 
   .popup_arrow {
@@ -50,8 +51,8 @@ export const Container = styled.div`
     height: 10px;
     width: 10px;
     background-color: #fff;
-    border-top: 1px solid #f2f2f2;
-    border-right: 1px solid #f2f2f2;
+    border-top: ${themeGet("border.solid.0")};
+    border-right: ${themeGet("border.solid.0")};
     border-radius: 2px;
   }
 
@@ -62,9 +63,9 @@ export const Container = styled.div`
     left: calc(50% - 3px);
     height: 6px;
     width: 6px;
-    background-color: #222831;
-    border-top: 1px solid #222831;
-    border-right: 1px solid #222831;
+    background-color: ${themeGet("bgColor.0")};
+    border-top: ${themeGet("border.solid.1")};
+    border-right: ${themeGet("border.solid.1")};
     border-top-right-radius: 2px;
   }
 `;

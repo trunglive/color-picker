@@ -1,4 +1,5 @@
 import React from "react";
+import themeGet from "@styled-system/theme-get";
 
 import ColorCircle from "./ColorCircle";
 import { ColorAndInputWrapper, HexInputWrapper } from "./ColorAndInput.style";
@@ -11,7 +12,9 @@ function ColorAndInput(props) {
     <ColorAndInputWrapper>
       <ColorCircle
         color={color}
-        backgroundColor={isColor(color.selected) ? color.selected : "#e4e3e3"}
+        backgroundColor={
+          isColor(color.selected) ? color.selected : themeGet("bgColor.1")
+        }
         showQuestionMark={!isColor(color.selected)}
         hideBorder
       />

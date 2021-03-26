@@ -1,15 +1,16 @@
 import styled from "styled-components";
+import { themeGet } from "@styled-system/theme-get";
 
 export const ColorPaletteCircleGroup = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 12px;
-  border-bottom: 1px solid #f2f2f2;
+  border-bottom: ${themeGet("border.solid.0")};
 
   .color-palette-header {
     padding: 12px;
-    color: #706f6f;
+    color: ${themeGet("text.0")};
   }
 
   > div:not(:last-child) {

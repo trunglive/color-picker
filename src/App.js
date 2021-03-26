@@ -1,11 +1,11 @@
 import TagColor from "./components/Color/TagColor";
-import "./App.css";
+import { AppWrapper } from "./App.style";
 
 function App() {
   return (
-    <div className="App">
+    <AppWrapper>
       <TagColor />
-    </div>
+    </AppWrapper>
   );
 }
 
