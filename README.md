@@ -20,6 +20,8 @@ For styling, each component goes along with each ***.style.js** that is written 
 
 ## Preview
 
+![color picker gif](public/assets/color-picker-demo.gif)
+
 ## Download source code and install dependencies
 
 ### `git clone git@github.com:trunglive/color-picker.git`
