@@ -1,83 +1,33 @@
-# Getting Started with Create React App
+# Color Picker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An experimental color project based on my interest in collecting fresh color palettes.
 
-## Available Scripts
+## What I learned
 
-In the project directory, you can run:
+Since the evolving of [React Hooks](https://reactjs.org/docs/hooks-intro.html), we can avoid writing classes and write more stateless components instead. Hooks enables us to separate logic from the views.
+I tried using Hooks to manage shared states between components. This [post](https://kentcdodds.com/blog/state-colocation-will-make-your-react-app-faster) would be a great reference on where to put the hooks, ideally should be the closest parent of components we pass states into.
+For styling, each component goes along with each ***.style.js** that is written using **styled-components**. We can pass variables into css which I found really handy. On top of that, [@styled-system/theme-get](https://github.com/styled-system/styled-system) enables us to reuse color theme across the app.
 
-### `yarn start`
+## Built with
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [React](https://github.com/facebook/react)
+- [Styled Components](https://github.com/styled-components/styled-components)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Features
 
-### `yarn test`
+- select color from default list
+- add custom hex color
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more
-information.
+## Preview
 
-### `yarn build`
+## Download source code and install dependencies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `git clone git@github.com:trunglive/color-picker.git`
+### `npm install`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To start this project, you can run:
+### `npm start`
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will
-remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right
-into your project so you have full control over them. All of the commands except `eject` will still work, but they will
-point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you
-shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t
-customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in
-the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved
-here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved
-here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved
-here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved
-here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved
-here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved
-here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Then open [http://localhost:3000](http://localhost:3000) to view it in the browser.
