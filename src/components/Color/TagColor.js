@@ -16,8 +16,8 @@ function TagColor() {
       style={{
         display: "flex",
         justifyContent: "center",
-        alignItems: "center",
-        height: "50vh",
+        height: "100vh",
+        paddingTop: 200,
       }}
     >
       <ViewWithPopup

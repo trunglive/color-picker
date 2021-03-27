@@ -6,6 +6,7 @@ export const ColorPaletteCircleGroup = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 12px;
+  background-color: #fff;
   border-bottom: ${themeGet("border.solid.0")};
 
   .color-palette-header {
@@ -36,4 +37,5 @@ export const ColorPaletteCircleGroup = styled.div`
 
 export const ColorPaletteInput = styled.div`
   padding: 18px 24px;
+  background-color: #fff;
 `;

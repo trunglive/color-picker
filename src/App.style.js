@@ -3,4 +3,5 @@ import themeGet from "@styled-system/theme-get";
 
 export const AppWrapper = styled.div`
   font-family: ${themeGet("fonts.primary")};
+  background-color: #f4f9f9;
 `;
