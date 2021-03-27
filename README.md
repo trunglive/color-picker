@@ -24,12 +24,12 @@ For styling, each component goes along with each ***.style.js** that is written 
 
 ## Download source code and install dependencies
 
-### `git clone git@github.com:trunglive/color-picker.git`
-### `npm install`
+#### `git clone git@github.com:trunglive/color-picker.git`
+#### `npm install`
 
 ## Getting started
 
 To start this project, you can run:
-### `npm start`
+#### `npm start`
 
 Then open [http://localhost:3000](http://localhost:3000) to view it in the browser.
