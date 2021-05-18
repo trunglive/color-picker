@@ -13,7 +13,7 @@ export default function ViewWithPopup({
   className,
   enableTooltip,
 }) {
-  const [showPopup, setShowPopup] = useState(false);
+  const [showPopup, setShowPopup] = useState(true);
   const wrapperRef = useRef();
   useOnClickOutside(wrapperRef, () => setShowPopup(false));
 
@@ -46,7 +46,7 @@ export default function ViewWithPopup({
           onClick={() => setShowPopup(!showPopup)}
           onMouseEnter={() => showPopupOnHover && setShowPopup(true)}
         >
-          {view}
+          {React.cloneElement(view, { showPopup })}
         </div>
       )}
       <Container

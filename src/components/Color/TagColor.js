@@ -31,6 +31,7 @@ function TagColor() {
             }
             showQuestionMark={!isColor(color.selected)}
             hideBorder
+            mainCircle
           />
         }
         popup={
