@@ -2,6 +2,7 @@ import React from "react";
 
 import ChevronDown from "../../assets/icon/ChevronDown";
 import { ColorCircleWrapper, ColorCircleInner } from "./ColorCircle.style";
+import { isColor } from "../../utils/color";
 
 function ColorCircle(props) {
   const {
@@ -12,8 +13,8 @@ function ColorCircle(props) {
     showPopup,
     mainCircle,
   } = props;
-  const showUpArrow = showPopup && color.selected;
-  const showDownArrow = mainCircle && !showPopup && color.selected;
+  const showUpArrow = showPopup && isColor(color.selected);
+  const showDownArrow = mainCircle && !showPopup && isColor(color.selected);
 
   return (
     <ColorCircleWrapper
